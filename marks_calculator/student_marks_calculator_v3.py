@@ -1,5 +1,3 @@
-
-
 #Student Marks calulator cum report card.
 '''
 ✅ Enter marks for each subject
@@ -12,25 +10,33 @@
 ✅ Print a Report Card
 
 '''
-#subjects = 3
+# List containing all subject names
 subject_name = ['English', 'Math', 'Science']
 
+# Variable to store the total marks of all subjects
 total = 0
 
+# Starting with 100 assuming maximum marks are 100
 max = 0
 max_subject = ''
 
+# Starting with 100 assuming maximum marks are 100
 min = 100
 min_subject = ''
 
-overall_result = "Pass"
+# If any subject is failed, this will change to FAIL
+overall_result = "Pass"  
 
-report_card =[]
+# Loop through each subject in the subjects list
+report_card =[]  
 
+
+# Loop through each subject in the subjects list
 for subject in (subject_name):
-    #subject_name = input(f"Enter Subject {i} Name : ")
-    marks = int(input(f'Enter marks for {subject}: '))
-    total += marks
+     # Ask user to enter marks for the current subject
+    marks = int(input(f'Enter marks for {subject}: '))  
+    # Add current subject marks to the running total
+    total += marks  
   
    
    #Max number:
@@ -44,7 +50,6 @@ for subject in (subject_name):
         min_subject = subject
 
     #Grade assignment
-
     if marks >= 90:
         grade = 'A' 
     elif marks >= 75:
@@ -67,32 +72,41 @@ for subject in (subject_name):
     #store data in  report card
     report_card.append([subject, marks, grade, status])
     
-    #Print Report card
-    print('='*25)
-    print("STUDENT REPORT CARD")
-    print('='*25)
+#Print Report card
+print('='*25)
+print("STUDENT REPORT CARD")
+print('='*25)
 
-    print(f"\n{'Subject':<12} {'Marks':<8} {'Grade':<8} {'Status'}")
+## Print column headings
+# <12 means left align within 12 spaces
+# <8 means left align within 8 spaces
 
-    #Loop through each row stored in report_card
-    for row in report_card:
+print(f"\n{'Subject':<12} {'Marks':<8} {'Grade':<8} {'Status'}")
+
+#Loop through each row stored in report_card
+for row in report_card:
 
         #row[0] = Subject
         #row[1] = Marks
         #row[2] = Grade
         #row[3] = Status
 
-        print(f"\n{row[0]:<12} {row[1]:<8} {row[2]:<8} {row[3]}")
+    print(f"\n{row[0]:<12} {row[1]:<8} {row[2]:<8} {row[3]}")
 
 
+# Calculate Average Marks
 average = total/len(subject_name)
 
 print(f'\nReport Card')
 print('='*25)
-print(f'Total Marks    :  {total}')
-print(f'Average Marks  :  {average:.2f}')
-print(f'Higesht Marks  :  {max} ({max_subject})')
-print(f'Lowest Marks   :  {min} ({min_subject})')
-print(f'Result         :  {overall_result}')
-print('='*25)
+print(f'Total Marks    :  {total}')                 # Display total marks
+print(f'Average Marks  :  {average:.2f}')           # Average Marks, with 2 decimal point
+print(f'Higesht Marks  :  {max} ({max_subject})')   # Display highest marks with subject name
+print(f'Lowest Marks   :  {min} ({min_subject})')   # Display lowest marks with subject name
+print(f'Result         :  {overall_result}')        # Display overall pass/fail result
+print('='*25)                                       #formate
 print(f'\n')
+
+
+
+
