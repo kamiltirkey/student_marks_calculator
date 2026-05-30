@@ -85,18 +85,6 @@ for subject in (subject_name):
         print(f"\n{row[0]:<12} {row[1]:<8} {row[2]:<8} {row[3]}")
 
 
-
-    '''print(f'Subject :{subject_name[i]} ')
-    print(f'Marks: {marks}')
-    print(f'Grade: {grade}')
-    print(f'Result: {status}')
-    print('-'*25)
-   
-    '''
-
-
-
-
 average = total/len(subject_name)
 
 print(f'\nReport Card')
